@@ -1,0 +1,148 @@
+.box-main-content {
+	padding-left:0
+}
+.box-title {
+    background-color: #028dff;
+}
+.box-title {
+    padding: 5px 0;
+}
+.box-title {
+    padding: 10px;
+    text-align: inherit;
+    background-color: #0086cf;
+}
+* {
+    font-weight: normal;
+}
+body {
+    color: #666;
+}
+body {
+    font-family: microsoft yahei;
+}
+.box-title h3 {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.box-title h3 {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 10px;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.box-title .more {
+    margin-top: -3px;
+}
+.pull-right {
+    float: right !important;
+}
+.p-0 {
+    padding: 0 !important;
+}
+li, ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.layout-box [class*="col-"], .layout-box-no [class*="col-"] {
+    padding: 15px;
+}
+.layout-box [class*="col-"], .details-star [class*="col-"], .layout-box-main [class*="col-"], .layout-box-no [class*="col-"] {
+    padding: 10px 10px 0 10px;
+    border-top: 1px solid #ddd;
+}
+a:focus, a:hover, a:link {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, a, .details-play-title .nav-tabs > li.active > a, .details-play-title .nav-tabs > li.active > a:focus, .details-play-title .nav-tabs > li.active > a:hover, .details-play-title .nav-tabs > li > a:hover, .details-play-title .nav-tabs > li.open > a, .details-play-title .dropdown-menu > li > a, .dropdown-menu > li > a {
+    color: #333;
+    font-weight: 500;
+}
+span.xslist.text-bg-c {
+    font-size: 16px;
+}
+.box-page {
+    padding: 0;
+}
+.box-page {
+    margin: 20px 0;
+    text-align: center;
+}
+.box-page ul li {
+    display: inline-block;
+    padding: 0;
+    margin-left: 10px;
+}
+.box-video-ranking ul li .num, .box-video-text-list ul li .num, .index-menu li a, .box-index-mcid li a, .box-title-nav li a, .box-page ul li span, .tv-diantai li .tv, .nav-search .form-control, .index-menu li a, .details-tool a, .playlist ul li a, .player_playlist ul li a, .details-story h4, .details-tv .item h4, .comment-post, .details-page a, .details-title h1, .actor-title, .layout-box .more-click, .box-gbook .item .content, .comment-num, .news_remark, .player_bottom .prevnext a, .tv_txt_list ul li span.b, .tv_detail_week, .playlog_list ul li:hover, .autocomplete-selected {
+    background-color: #f5f5f5;
+    color: #999;
+}
+.box-page ul li span, .box-page ul li a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+.index-menu li a:hover, .box-index-mcid li a:hover, .playlist ul li a:hover, .playlist ul li a.active, .player_playlist ul li a:hover, .player_playlist ul li a.active, .index-menu li a:hover .text-color, .video-pic .score, .swiper-pagination-bullet-active, .box-video-ranking li .num.active, .box-video-text-list ul li .num.active, .box-title-nav li a:hover, .box-title-nav li a.active, .box-page ul li a:hover, .box-page ul li.active span, .box-video-text-list ul li .tv.active, .tv-diantai li:hover .tv, .list-mcat .content-meun .head dl dd span, .details-tool a:hover, .details-tool a.active, .rating-box .rating-show .power-item, .tv-live, .details-page a:hover, .actor-box .actor-title.active, .box-index-mcid li.active a, .player_bottom .prevnext a:hover, .tv_txt_list ul li:hover span.b, .tv_detail_week ul a:hover, .tv_detail_week ul a.active, .ui-signed li:hover {
+    background-color: #0086cf;
+    color: #fff;
+}
+.news-txt, .news-box:hover, .news-box-txt, .box-page ul li a {
+    background-color: #f5f5f5;
+    color: #333;
+}
+.details-content {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 15px 5px;
+    color: #222;
+}
+.text-justify {
+    text-align: justify;
+}
+.details-content p {
+    text-indent: 2%;
+}
+.details-slide img, .details-content img {
+    border: 1px solid #f5f5f5;
+}
+.details-content img {
+    max-width: 100%;
+    /*width: expression(this.width > 400 && this.width > this.height ? 400 : auto);*/
+    width: 765px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    padding: 1px;
+}
+.news_details h1 {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.box-video-ranking ul li .num, .box-video-text-list ul li .num, .index-menu li a, .box-index-mcid li a, .box-title-nav li a, .box-page ul li span, .tv-diantai li .tv, .nav-search .form-control, .index-menu li a, .details-tool a, .playlist ul li a, .player_playlist ul li a, .details-story h4, .details-tv .item h4, .comment-post, .details-page a, .details-title h1, .actor-title, .layout-box .more-click, .box-gbook .item .content, .comment-num, .news_remark, .player_bottom .prevnext a, .tv_txt_list ul li span.b, .tv_detail_week, .playlog_list ul li:hover, .autocomplete-selected {
+    background-color: #f5f5f5;
+    color: #999;
+}
+.index-menu li a, .box-index-mcid li a, .box-page ul li.active span, .nav-search .form-control, #rating, .playlist ul li a, .details-page a, .box-gbook .item .content, .comment-num, .comment-sub, .tv_txt_list ul li span.b {
+    border: 1px solid #fff;
+}
+.box-index-mcid li a, .details-page a {
+    display: block;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+a:focus, a:hover, a:link {
+    text-decoration: none;
+}
