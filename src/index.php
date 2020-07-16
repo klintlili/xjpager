@@ -14,7 +14,12 @@ $this->registerCssFile("@web/css/lightbox.min.css", ["depends" => ["backend\\ass
 $this->registerJsFile("@web/js/lightbox.min.js", ["depends" => ["backend\\assets\\AppAsset"]]);
 
 //import css style.css
-$this->registerCssFile("@web/css/style.css", ["depends" => ["backend\\assets\\AppAsset"]]);
+$this->registerCssFile("@web/css/style.min.css", ["depends" => ["backend\\assets\\AppAsset"]]);
+
+//weui
+$this->registerCssFile("@web/css/weui.min.css", ["depends" => ["backend\\assets\\AppAsset"]]);
+$this->registerJsFile("@web/js/weui.min.js", ["depends" => ["backend\\assets\\AppAsset"]]);
+
 ?>
 <style type="text/css">
     .custompage{
@@ -73,7 +78,7 @@ $this->registerCssFile("@web/css/style.css", ["depends" => ["backend\\assets\\Ap
                             'customPageWidth' => 50,
                             'customPageBefore' => ' Jump to ',
                             'customPageAfter' => ' Page ',
-                            'registerLinkTags' => true, //页面head上会生成当前页，下一个最后一页的信息link https://www.w3.org/TR/html401/struct/links.html#h-12.1.2
+                            //'registerLinkTags' => true, //页面head上会生成当前页，下一个最后一页的信息link https://www.w3.org/TR/html401/struct/links.html#h-12.1.2
                         ]
                     ]); ?>
             </div>
@@ -81,3 +86,30 @@ $this->registerCssFile("@web/css/style.css", ["depends" => ["backend\\assets\\Ap
     </div>
     <?php Pjax::end(); ?>
 </div>
+
+<div id="containerss" style="display: none;">
+    Click me to load content...
+</div>
+
+<?php $this->registerJs("
+$(\".roadtrip\").one(\"click\", function(a) { //采用one就是绑定执行一次就结束了，如果有多个roadtrip元素的话，没有点击到的roadtrip还是可以执行事件的，很符合我们的要求
+    //阻止事件冒泡到DOM树上
+    a.stopPropagation();  //pic-1本身就在一个标签中，这个a标签外层还有一个a标签，这个a标签点击了是跳转到详情页去的
+    //采用了微信的weuil来做提示效果
+    var loading = weui.loading('loading', {
+        className: 'custom-classname'
+    });
+    //console.log(this);
+    $(\"#containerss\").load($(this).data('load')+\" .details-content\", function(response, status, xhr) { //jquery load方法事件
+        //load() 方法从服务器加载数据，并把返回的数据放置到指定的元素中。
+        //上面的意思是请求服务器获取内容，将内容中的.details-content区域内容替换掉#containerss的内容。如果服务器正常返回status=success,但是没有内容空内容或者返回的内容没有details-content的话，那么就替换空内容进#containerss中
+        //console.log(response,status, xhr);
+        $('.details-content a').trigger('click');
+        //本来也试了$(response).find('.details-content a').trigger('click');但是最后没有很好的搭配效果，是因为$(response).find('.details-content a')找到的内容没有追加或者写入页面document中，是没有办法正常执行到trigger('click');的
+        loading.hide(function() {
+            console.log('`loading` has been hidden');
+        });
+        //最后将loading效果去除掉
+    });
+});
+");?>
