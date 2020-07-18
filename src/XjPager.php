@@ -191,6 +191,11 @@ class XjPager extends LinkPager
 
     protected function renderPageSize()
     {
+        $pageCount = $this->pagination->getPageCount();
+        if ($pageCount < 2 && $this->hideOnSinglePage) {
+            return '';
+        }
+
         $pageSizeList = [];
         foreach ($this->pageSizeList as $value) {
             $pageSizeList[$value] = $value;
@@ -201,6 +206,11 @@ class XjPager extends LinkPager
     //自己改造一下
     protected function renderPageSize2()
     {
+        $pageCount = $this->pagination->getPageCount();
+        if ($pageCount < 2 && $this->hideOnSinglePage) {
+            return '';
+        }
+        
         $pageSizeList = [];
         $current_url = array_merge([Yii::$app->controller->getRoute()], Yii::$app->request->queryParams);
         foreach ($this->pageSizeList as $value) {
@@ -218,6 +228,7 @@ class XjPager extends LinkPager
         if ($pageCount < 2 && $this->hideOnSinglePage) {
             return '';
         }
+
         $page = 1;
         $params = Yii::$app->getRequest()->queryParams;
         if (isset($params[$this->pagination->pageParam])) {
@@ -234,9 +245,14 @@ class XjPager extends LinkPager
     protected function renderCustomPage2()
     {
         $pageCount = $this->pagination->getPageCount();
+        if ($pageCount < 2 && $this->hideOnSinglePage) {
+            return '';
+        }
+
         $page = $this->pagination->getPage() + 1;
         $totalCount = $this->pagination->totalCount;
 
         return "共{$totalCount}套图片 当前:{$page}/{$pageCount}页";
     }
+
 }
